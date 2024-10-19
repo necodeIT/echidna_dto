@@ -38,10 +38,12 @@ class Feature with _$Feature {
 /// The type of a feature.
 enum FeatureType {
   /// The feature can be used without payment.
+  @JsonValue('FREE')
   free,
 
   /// The feature can be used after payment or might have a trial period.
   ///
   /// The trial period is defined in [Feature.trialPeriod].
+  @JsonValue('PAID')
   paid,
 }

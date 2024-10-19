@@ -18,10 +18,10 @@ class Payment with _$Payment {
     @JsonKey(name: 'license_key') required String licenseKey,
 
     /// The activation date for the license.
-    @UnixTimestampConverter() @JsonKey(name: 'activation_date') required DateTime activationDate,
+    @Iso8601DateTimeConverter() @JsonKey(name: 'activation_date') required DateTime activationDate,
 
     /// The expiration date for the license.
-    @UnixTimestampConverter() @JsonKey(name: 'expiration_date') required DateTime expirationDate,
+    @Iso8601DateTimeConverter() @JsonKey(name: 'expiration_date') required DateTime expirationDate,
 
     /// A Reference to the associated bank statement.
     @JsonKey(name: 'payment_reference') String? paymentReference,

@@ -29,12 +29,12 @@ mixin _$Payment {
   String get licenseKey => throw _privateConstructorUsedError;
 
   /// The activation date for the license.
-  @UnixTimestampConverter()
+  @Iso8601DateTimeConverter()
   @JsonKey(name: 'activation_date')
   DateTime get activationDate => throw _privateConstructorUsedError;
 
   /// The expiration date for the license.
-  @UnixTimestampConverter()
+  @Iso8601DateTimeConverter()
   @JsonKey(name: 'expiration_date')
   DateTime get expirationDate => throw _privateConstructorUsedError;
 
@@ -71,10 +71,10 @@ abstract class $PaymentCopyWith<$Res> {
   $Res call(
       {@JsonKey(name: 'id') int id,
       @JsonKey(name: 'license_key') String licenseKey,
-      @UnixTimestampConverter()
+      @Iso8601DateTimeConverter()
       @JsonKey(name: 'activation_date')
       DateTime activationDate,
-      @UnixTimestampConverter()
+      @Iso8601DateTimeConverter()
       @JsonKey(name: 'expiration_date')
       DateTime expirationDate,
       @JsonKey(name: 'payment_reference') String? paymentReference,
@@ -154,10 +154,10 @@ abstract class _$$PaymentImplCopyWith<$Res> implements $PaymentCopyWith<$Res> {
   $Res call(
       {@JsonKey(name: 'id') int id,
       @JsonKey(name: 'license_key') String licenseKey,
-      @UnixTimestampConverter()
+      @Iso8601DateTimeConverter()
       @JsonKey(name: 'activation_date')
       DateTime activationDate,
-      @UnixTimestampConverter()
+      @Iso8601DateTimeConverter()
       @JsonKey(name: 'expiration_date')
       DateTime expirationDate,
       @JsonKey(name: 'payment_reference') String? paymentReference,
@@ -231,10 +231,10 @@ class _$PaymentImpl extends _Payment {
   const _$PaymentImpl(
       {@JsonKey(name: 'id') required this.id,
       @JsonKey(name: 'license_key') required this.licenseKey,
-      @UnixTimestampConverter()
+      @Iso8601DateTimeConverter()
       @JsonKey(name: 'activation_date')
       required this.activationDate,
-      @UnixTimestampConverter()
+      @Iso8601DateTimeConverter()
       @JsonKey(name: 'expiration_date')
       required this.expirationDate,
       @JsonKey(name: 'payment_reference') this.paymentReference,
@@ -259,13 +259,13 @@ class _$PaymentImpl extends _Payment {
 
   /// The activation date for the license.
   @override
-  @UnixTimestampConverter()
+  @Iso8601DateTimeConverter()
   @JsonKey(name: 'activation_date')
   final DateTime activationDate;
 
   /// The expiration date for the license.
   @override
-  @UnixTimestampConverter()
+  @Iso8601DateTimeConverter()
   @JsonKey(name: 'expiration_date')
   final DateTime expirationDate;
 
@@ -354,10 +354,10 @@ abstract class _Payment extends Payment {
   const factory _Payment(
       {@JsonKey(name: 'id') required final int id,
       @JsonKey(name: 'license_key') required final String licenseKey,
-      @UnixTimestampConverter()
+      @Iso8601DateTimeConverter()
       @JsonKey(name: 'activation_date')
       required final DateTime activationDate,
-      @UnixTimestampConverter()
+      @Iso8601DateTimeConverter()
       @JsonKey(name: 'expiration_date')
       required final DateTime expirationDate,
       @JsonKey(name: 'payment_reference') final String? paymentReference,
@@ -381,13 +381,13 @@ abstract class _Payment extends Payment {
 
   /// The activation date for the license.
   @override
-  @UnixTimestampConverter()
+  @Iso8601DateTimeConverter()
   @JsonKey(name: 'activation_date')
   DateTime get activationDate;
 
   /// The expiration date for the license.
   @override
-  @UnixTimestampConverter()
+  @Iso8601DateTimeConverter()
   @JsonKey(name: 'expiration_date')
   DateTime get expirationDate;
 

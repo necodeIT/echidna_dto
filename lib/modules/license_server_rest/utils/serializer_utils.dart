@@ -15,7 +15,7 @@ import 'package:freezed_annotation/freezed_annotation.dart';
 ///   const MyClass(this.timestamp);
 /// }
 /// ```
-class UnixTimestampConverter extends JsonConverter<DateTime, int> {
+class Iso8601DateTimeConverter extends JsonConverter<DateTime, String> {
   /// Implements serialization and deserialization for [DateTime] from and to [int].
   ///
   /// Usage:
@@ -29,15 +29,15 @@ class UnixTimestampConverter extends JsonConverter<DateTime, int> {
   ///   const MyClass(this.timestamp);
   /// }
   /// ```
-  const UnixTimestampConverter();
+  const Iso8601DateTimeConverter();
 
   @override
-  DateTime fromJson(int json) {
-    return DateTime.fromMillisecondsSinceEpoch(json * 1000);
+  DateTime fromJson(String json) {
+    return DateTime.parse(json);
   }
 
   @override
-  int toJson(DateTime object) {
-    return object.millisecondsSinceEpoch ~/ 1000;
+  String toJson(DateTime object) {
+    return object.toIso8601String();
   }
 }

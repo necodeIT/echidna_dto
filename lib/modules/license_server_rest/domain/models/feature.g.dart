@@ -27,6 +27,6 @@ Map<String, dynamic> _$$FeatureImplToJson(_$FeatureImpl instance) =>
     };
 
 const _$FeatureTypeEnumMap = {
-  FeatureType.free: 'free',
-  FeatureType.paid: 'paid',
+  FeatureType.free: 'FREE',
+  FeatureType.paid: 'PAID',
 };
