@@ -1,7 +1,7 @@
 // ignore_for_file: invalid_annotation_target
 
 import 'package:freezed_annotation/freezed_annotation.dart';
-import 'package:license_server_rest/modules/license_server_rest/license_server_rest.dart';
+import 'package:license_server_rest/license_server_rest.dart';
 
 part 'payment.freezed.dart';
 part 'payment.g.dart';
