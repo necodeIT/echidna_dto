@@ -2,6 +2,7 @@ library license_server_rest;
 
 export 'src/customer.dart';
 export 'src/feature.dart';
+export 'src/identity_provider.dart';
 export 'src/license.dart';
 export 'src/license_status.dart';
 export 'src/payment.dart';
