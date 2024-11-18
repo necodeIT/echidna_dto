@@ -2,7 +2,7 @@ name: echidna_dto
 description: "Data transfer objects for talking to the echidna license server"
 version: 0.0.1
 publish_to: none
-repository: https://github.com/necodeIT/license_server_rest
+repository: https://github.com/necodeIT/echidna_dto
 
 environment:
   sdk: ">=3.4.3 <4.0.0"
