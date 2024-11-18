@@ -1,4 +1,4 @@
-library license_server_rest;
+library echidna_dto;
 
 export 'src/customer.dart';
 export 'src/feature.dart';

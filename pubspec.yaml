@@ -1,5 +1,5 @@
-name: license_server_rest
-description: "Rest models returned by the license server"
+name: echidna_dto
+description: "Data transfer objects for talking to the echidna license server"
 version: 0.0.1
 publish_to: none
 repository: https://github.com/necodeIT/license_server_rest
