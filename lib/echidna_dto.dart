@@ -1,5 +1,6 @@
 library echidna_dto;
 
+export 'src/client_key.dart';
 export 'src/customer.dart';
 export 'src/feature.dart';
 export 'src/identity_provider.dart';
