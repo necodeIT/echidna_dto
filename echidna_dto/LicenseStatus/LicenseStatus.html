@@ -66,7 +66,7 @@
 <li><span class="parameter" id="-param-activationDate"><span>@<a href="../../echidna_dto/Iso8601DateTimeConverter-class.html">Iso8601DateTimeConverter</a>()</span> <span>@<a href="https://pub.dev/documentation/json_annotation/4.9.0/json_annotation/JsonKey-class.html">JsonKey</a>(name: &#39;activation_date&#39;)</span> <span class="type-annotation"><a href="https://api.dart.dev/stable/3.5.4/dart-core/DateTime-class.html">DateTime</a>?</span> <span class="parameter-name">activationDate</span>, </span></li>
 <li><span class="parameter" id="-param-expirationDate"><span>@<a href="../../echidna_dto/Iso8601DateTimeConverter-class.html">Iso8601DateTimeConverter</a>()</span> <span>@<a href="https://pub.dev/documentation/json_annotation/4.9.0/json_annotation/JsonKey-class.html">JsonKey</a>(name: &#39;expiration_date&#39;)</span> <span class="type-annotation"><a href="https://api.dart.dev/stable/3.5.4/dart-core/DateTime-class.html">DateTime</a>?</span> <span class="parameter-name">expirationDate</span>, </span></li>
 <li><span class="parameter" id="-param-active"><span>required</span> <span class="type-annotation"><a href="https://api.dart.dev/stable/3.5.4/dart-core/bool-class.html">bool</a></span> <span class="parameter-name">active</span>, </span></li>
-<li><span class="parameter" id="-param-featureClaims"><span>@<a href="https://pub.dev/documentation/json_annotation/4.9.0/json_annotation/JsonKey-class.html">JsonKey</a>(name: &#39;features&#39;)</span> <span>required</span> <span class="type-annotation"><a href="https://api.dart.dev/stable/3.5.4/dart-core/List-class.html">List</a><span class="signature">&lt;<wbr><span class="type-parameter"><a href="../../echidna_dto/Feature-class.html">Feature</a></span>&gt;</span></span> <span class="parameter-name">featureClaims</span>, </span></li>
+<li><span class="parameter" id="-param-featureClaims"><span>@<a href="https://pub.dev/documentation/json_annotation/4.9.0/json_annotation/JsonKey-class.html">JsonKey</a>(name: &#39;features&#39;)</span> <span>required</span> <span class="type-annotation"><a href="https://api.dart.dev/stable/3.5.4/dart-core/List-class.html">List</a><span class="signature">&lt;<wbr><span class="type-parameter"><a href="../../echidna_dto/FeatureClaim-class.html">FeatureClaim</a></span>&gt;</span></span> <span class="parameter-name">featureClaims</span>, </span></li>
 </ol>})
     </section>
 
@@ -93,7 +93,7 @@
   required bool active,
 
   &#47;&#47;&#47; The features activated by the license.
-  @JsonKey(name: &#39;features&#39;) required List&lt;Feature&gt; featureClaims,
+  @JsonKey(name: &#39;features&#39;) required List&lt;FeatureClaim&gt; featureClaims,
 }) = _LicenseStatus;</code></pre>
 </section>
 
