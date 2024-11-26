@@ -24,7 +24,7 @@ class LicenseStatus with _$LicenseStatus {
     required bool active,
 
     /// The features activated by the license.
-    @JsonKey(name: 'features') required List<Feature> featureClaims,
+    @JsonKey(name: 'features') required List<FeatureClaim> featureClaims,
   }) = _LicenseStatus;
 
   const LicenseStatus._();

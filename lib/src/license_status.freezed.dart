@@ -39,7 +39,7 @@ mixin _$LicenseStatus {
 
   /// The features activated by the license.
   @JsonKey(name: 'features')
-  List<Feature> get featureClaims => throw _privateConstructorUsedError;
+  List<FeatureClaim> get featureClaims => throw _privateConstructorUsedError;
 
   /// Serializes this LicenseStatus to a JSON map.
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
@@ -66,7 +66,7 @@ abstract class $LicenseStatusCopyWith<$Res> {
       @JsonKey(name: 'expiration_date')
       DateTime? expirationDate,
       bool active,
-      @JsonKey(name: 'features') List<Feature> featureClaims});
+      @JsonKey(name: 'features') List<FeatureClaim> featureClaims});
 }
 
 /// @nodoc
@@ -110,7 +110,7 @@ class _$LicenseStatusCopyWithImpl<$Res, $Val extends LicenseStatus>
       featureClaims: null == featureClaims
           ? _value.featureClaims
           : featureClaims // ignore: cast_nullable_to_non_nullable
-              as List<Feature>,
+              as List<FeatureClaim>,
     ) as $Val);
   }
 }
@@ -132,7 +132,7 @@ abstract class _$$LicenseStatusImplCopyWith<$Res>
       @JsonKey(name: 'expiration_date')
       DateTime? expirationDate,
       bool active,
-      @JsonKey(name: 'features') List<Feature> featureClaims});
+      @JsonKey(name: 'features') List<FeatureClaim> featureClaims});
 }
 
 /// @nodoc
@@ -174,7 +174,7 @@ class __$$LicenseStatusImplCopyWithImpl<$Res>
       featureClaims: null == featureClaims
           ? _value._featureClaims
           : featureClaims // ignore: cast_nullable_to_non_nullable
-              as List<Feature>,
+              as List<FeatureClaim>,
     ));
   }
 }
@@ -191,7 +191,8 @@ class _$LicenseStatusImpl extends _LicenseStatus {
       @JsonKey(name: 'expiration_date')
       this.expirationDate,
       required this.active,
-      @JsonKey(name: 'features') required final List<Feature> featureClaims})
+      @JsonKey(name: 'features')
+      required final List<FeatureClaim> featureClaims})
       : _featureClaims = featureClaims,
         super._();
 
@@ -220,12 +221,12 @@ class _$LicenseStatusImpl extends _LicenseStatus {
   final bool active;
 
   /// The features activated by the license.
-  final List<Feature> _featureClaims;
+  final List<FeatureClaim> _featureClaims;
 
   /// The features activated by the license.
   @override
   @JsonKey(name: 'features')
-  List<Feature> get featureClaims {
+  List<FeatureClaim> get featureClaims {
     if (_featureClaims is EqualUnmodifiableListView) return _featureClaims;
     // ignore: implicit_dynamic_type
     return EqualUnmodifiableListView(_featureClaims);
@@ -289,7 +290,7 @@ abstract class _LicenseStatus extends LicenseStatus {
       final DateTime? expirationDate,
       required final bool active,
       @JsonKey(name: 'features')
-      required final List<Feature> featureClaims}) = _$LicenseStatusImpl;
+      required final List<FeatureClaim> featureClaims}) = _$LicenseStatusImpl;
   const _LicenseStatus._() : super._();
 
   factory _LicenseStatus.fromJson(Map<String, dynamic> json) =
@@ -319,7 +320,7 @@ abstract class _LicenseStatus extends LicenseStatus {
   /// The features activated by the license.
   @override
   @JsonKey(name: 'features')
-  List<Feature> get featureClaims;
+  List<FeatureClaim> get featureClaims;
 
   /// Create a copy of LicenseStatus
   /// with the given fields replaced by the non-null parameter values.

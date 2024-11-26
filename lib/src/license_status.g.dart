@@ -15,7 +15,7 @@ _$LicenseStatusImpl _$$LicenseStatusImplFromJson(Map<String, dynamic> json) =>
           json['expiration_date'], const Iso8601DateTimeConverter().fromJson),
       active: json['active'] as bool,
       featureClaims: (json['features'] as List<dynamic>)
-          .map((e) => Feature.fromJson(e as Map<String, dynamic>))
+          .map((e) => FeatureClaim.fromJson(e as Map<String, dynamic>))
           .toList(),
     );
 
