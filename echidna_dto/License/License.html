@@ -65,7 +65,7 @@
       <span class="name ">License</span>(<wbr>{<ol class="parameter-list"> <li><span class="parameter" id="-param-licenseKey"><span>@<a href="https://pub.dev/documentation/json_annotation/4.9.0/json_annotation/JsonKey-class.html">JsonKey</a>(name: &#39;license_key&#39;)</span> <span>required</span> <span class="type-annotation"><a href="https://api.dart.dev/stable/3.5.4/dart-core/String-class.html">String</a></span> <span class="parameter-name">licenseKey</span>, </span></li>
 <li><span class="parameter" id="-param-customerId"><span>@<a href="https://pub.dev/documentation/json_annotation/4.9.0/json_annotation/JsonKey-class.html">JsonKey</a>(name: &#39;customer_id&#39;)</span> <span>required</span> <span class="type-annotation"><a href="https://api.dart.dev/stable/3.5.4/dart-core/int-class.html">int</a></span> <span class="parameter-name">customerId</span>, </span></li>
 <li><span class="parameter" id="-param-productId"><span>@<a href="https://pub.dev/documentation/json_annotation/4.9.0/json_annotation/JsonKey-class.html">JsonKey</a>(name: &#39;product_id&#39;)</span> <span>required</span> <span class="type-annotation"><a href="https://api.dart.dev/stable/3.5.4/dart-core/int-class.html">int</a></span> <span class="parameter-name">productId</span>, </span></li>
-<li><span class="parameter" id="-param-userId"><span>@<a href="https://pub.dev/documentation/json_annotation/4.9.0/json_annotation/JsonKey-class.html">JsonKey</a>(name: &#39;user_id&#39;)</span> <span>required</span> <span class="type-annotation"><a href="https://api.dart.dev/stable/3.5.4/dart-core/String-class.html">String</a></span> <span class="parameter-name">userId</span>, </span></li>
+<li><span class="parameter" id="-param-userId"><span>@<a href="https://pub.dev/documentation/json_annotation/4.9.0/json_annotation/JsonKey-class.html">JsonKey</a>(name: &#39;user_id&#39;)</span> <span class="type-annotation"><a href="https://api.dart.dev/stable/3.5.4/dart-core/String-class.html">String</a>?</span> <span class="parameter-name">userId</span>, </span></li>
 </ol>})
     </section>
 
@@ -89,7 +89,7 @@
   @JsonKey(name: &#39;product_id&#39;) required int productId,
 
   &#47;&#47;&#47; The user the license belongs to.
-  @JsonKey(name: &#39;user_id&#39;) required String userId,
+  @JsonKey(name: &#39;user_id&#39;) String? userId,
 }) = _License;</code></pre>
 </section>
 
