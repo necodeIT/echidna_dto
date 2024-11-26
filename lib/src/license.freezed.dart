@@ -34,7 +34,7 @@ mixin _$License {
 
   /// The user the license belongs to.
   @JsonKey(name: 'user_id')
-  String get userId => throw _privateConstructorUsedError;
+  String? get userId => throw _privateConstructorUsedError;
 
   /// Serializes this License to a JSON map.
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
@@ -54,7 +54,7 @@ abstract class $LicenseCopyWith<$Res> {
       {@JsonKey(name: 'license_key') String licenseKey,
       @JsonKey(name: 'customer_id') int customerId,
       @JsonKey(name: 'product_id') int productId,
-      @JsonKey(name: 'user_id') String userId});
+      @JsonKey(name: 'user_id') String? userId});
 }
 
 /// @nodoc
@@ -75,7 +75,7 @@ class _$LicenseCopyWithImpl<$Res, $Val extends License>
     Object? licenseKey = null,
     Object? customerId = null,
     Object? productId = null,
-    Object? userId = null,
+    Object? userId = freezed,
   }) {
     return _then(_value.copyWith(
       licenseKey: null == licenseKey
@@ -90,10 +90,10 @@ class _$LicenseCopyWithImpl<$Res, $Val extends License>
           ? _value.productId
           : productId // ignore: cast_nullable_to_non_nullable
               as int,
-      userId: null == userId
+      userId: freezed == userId
           ? _value.userId
           : userId // ignore: cast_nullable_to_non_nullable
-              as String,
+              as String?,
     ) as $Val);
   }
 }
@@ -109,7 +109,7 @@ abstract class _$$LicenseImplCopyWith<$Res> implements $LicenseCopyWith<$Res> {
       {@JsonKey(name: 'license_key') String licenseKey,
       @JsonKey(name: 'customer_id') int customerId,
       @JsonKey(name: 'product_id') int productId,
-      @JsonKey(name: 'user_id') String userId});
+      @JsonKey(name: 'user_id') String? userId});
 }
 
 /// @nodoc
@@ -128,7 +128,7 @@ class __$$LicenseImplCopyWithImpl<$Res>
     Object? licenseKey = null,
     Object? customerId = null,
     Object? productId = null,
-    Object? userId = null,
+    Object? userId = freezed,
   }) {
     return _then(_$LicenseImpl(
       licenseKey: null == licenseKey
@@ -143,10 +143,10 @@ class __$$LicenseImplCopyWithImpl<$Res>
           ? _value.productId
           : productId // ignore: cast_nullable_to_non_nullable
               as int,
-      userId: null == userId
+      userId: freezed == userId
           ? _value.userId
           : userId // ignore: cast_nullable_to_non_nullable
-              as String,
+              as String?,
     ));
   }
 }
@@ -158,7 +158,7 @@ class _$LicenseImpl extends _License {
       {@JsonKey(name: 'license_key') required this.licenseKey,
       @JsonKey(name: 'customer_id') required this.customerId,
       @JsonKey(name: 'product_id') required this.productId,
-      @JsonKey(name: 'user_id') required this.userId})
+      @JsonKey(name: 'user_id') this.userId})
       : super._();
 
   factory _$LicenseImpl.fromJson(Map<String, dynamic> json) =>
@@ -182,7 +182,7 @@ class _$LicenseImpl extends _License {
   /// The user the license belongs to.
   @override
   @JsonKey(name: 'user_id')
-  final String userId;
+  final String? userId;
 
   @override
   String toString() {
@@ -229,7 +229,7 @@ abstract class _License extends License {
       {@JsonKey(name: 'license_key') required final String licenseKey,
       @JsonKey(name: 'customer_id') required final int customerId,
       @JsonKey(name: 'product_id') required final int productId,
-      @JsonKey(name: 'user_id') required final String userId}) = _$LicenseImpl;
+      @JsonKey(name: 'user_id') final String? userId}) = _$LicenseImpl;
   const _License._() : super._();
 
   factory _License.fromJson(Map<String, dynamic> json) = _$LicenseImpl.fromJson;
@@ -252,7 +252,7 @@ abstract class _License extends License {
   /// The user the license belongs to.
   @override
   @JsonKey(name: 'user_id')
-  String get userId;
+  String? get userId;
 
   /// Create a copy of License
   /// with the given fields replaced by the non-null parameter values.

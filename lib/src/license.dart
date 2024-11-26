@@ -20,11 +20,14 @@ class License with _$License {
     @JsonKey(name: 'product_id') required int productId,
 
     /// The user the license belongs to.
-    @JsonKey(name: 'user_id') required String userId,
+    @JsonKey(name: 'user_id') String? userId,
   }) = _License;
 
   const License._();
 
   /// Creates a license from a JSON object.
   factory License.fromJson(Map<String, Object?> json) => _$LicenseFromJson(json);
+
+  /// If `true`, the license is customer-wide meaning the features unlocked by the license are available to all the customer's users.
+  bool get isCustomerWide => userId == null;
 }

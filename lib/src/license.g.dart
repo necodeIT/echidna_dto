@@ -11,7 +11,7 @@ _$LicenseImpl _$$LicenseImplFromJson(Map<String, dynamic> json) =>
       licenseKey: json['license_key'] as String,
       customerId: (json['customer_id'] as num).toInt(),
       productId: (json['product_id'] as num).toInt(),
-      userId: json['user_id'] as String,
+      userId: json['user_id'] as String?,
     );
 
 Map<String, dynamic> _$$LicenseImplToJson(_$LicenseImpl instance) =>
