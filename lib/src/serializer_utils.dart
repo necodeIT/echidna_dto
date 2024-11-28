@@ -1,4 +1,5 @@
 import 'package:json_annotation/json_annotation.dart';
+import 'package:logging/logging.dart';
 
 /// Implements serialization and deserialization for [DateTime] from and to [int].
 ///
@@ -39,5 +40,22 @@ class Iso8601DateTimeConverter extends JsonConverter<DateTime, String> {
   @override
   String toJson(DateTime object) {
     return object.toIso8601String();
+  }
+}
+
+/// Converts a [Level] to json and vice versa.
+class LevelConverter extends JsonConverter<Level, String> {
+  /// Converts a [Level] to json and vice versa.
+  const LevelConverter();
+
+  @override
+  Level fromJson(String json) {
+    final parts = json.split('@');
+    return Level(parts[0], int.parse(parts[1]));
+  }
+
+  @override
+  String toJson(Level object) {
+    return '${object.name}@${object.value}';
   }
 }
