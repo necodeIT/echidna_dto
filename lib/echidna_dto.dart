@@ -30,3 +30,4 @@ export 'src/license_status.dart';
 export 'src/payment.dart';
 export 'src/product.dart';
 export 'src/serializer_utils.dart';
+export 'src/server_log.dart';
