@@ -20,6 +20,9 @@ ServerLog _$ServerLogFromJson(Map<String, dynamic> json) {
 
 /// @nodoc
 mixin _$ServerLog {
+  /// [LogRecord.loggerName]
+  String get name => throw _privateConstructorUsedError;
+
   /// [LogRecord.sequenceNumber]
   int get sequenceNumber => throw _privateConstructorUsedError;
 
@@ -56,7 +59,8 @@ abstract class $ServerLogCopyWith<$Res> {
       _$ServerLogCopyWithImpl<$Res, ServerLog>;
   @useResult
   $Res call(
-      {int sequenceNumber,
+      {String name,
+      int sequenceNumber,
       @Iso8601DateTimeConverter() DateTime time,
       @LevelConverter() Level level,
       String message,
@@ -79,6 +83,7 @@ class _$ServerLogCopyWithImpl<$Res, $Val extends ServerLog>
   @pragma('vm:prefer-inline')
   @override
   $Res call({
+    Object? name = null,
     Object? sequenceNumber = null,
     Object? time = null,
     Object? level = null,
@@ -87,6 +92,10 @@ class _$ServerLogCopyWithImpl<$Res, $Val extends ServerLog>
     Object? stackTrace = freezed,
   }) {
     return _then(_value.copyWith(
+      name: null == name
+          ? _value.name
+          : name // ignore: cast_nullable_to_non_nullable
+              as String,
       sequenceNumber: null == sequenceNumber
           ? _value.sequenceNumber
           : sequenceNumber // ignore: cast_nullable_to_non_nullable
@@ -124,7 +133,8 @@ abstract class _$$ServerLogImplCopyWith<$Res>
   @override
   @useResult
   $Res call(
-      {int sequenceNumber,
+      {String name,
+      int sequenceNumber,
       @Iso8601DateTimeConverter() DateTime time,
       @LevelConverter() Level level,
       String message,
@@ -145,6 +155,7 @@ class __$$ServerLogImplCopyWithImpl<$Res>
   @pragma('vm:prefer-inline')
   @override
   $Res call({
+    Object? name = null,
     Object? sequenceNumber = null,
     Object? time = null,
     Object? level = null,
@@ -153,6 +164,10 @@ class __$$ServerLogImplCopyWithImpl<$Res>
     Object? stackTrace = freezed,
   }) {
     return _then(_$ServerLogImpl(
+      name: null == name
+          ? _value.name
+          : name // ignore: cast_nullable_to_non_nullable
+              as String,
       sequenceNumber: null == sequenceNumber
           ? _value.sequenceNumber
           : sequenceNumber // ignore: cast_nullable_to_non_nullable
@@ -185,7 +200,8 @@ class __$$ServerLogImplCopyWithImpl<$Res>
 @JsonSerializable()
 class _$ServerLogImpl extends _ServerLog {
   const _$ServerLogImpl(
-      {required this.sequenceNumber,
+      {required this.name,
+      required this.sequenceNumber,
       @Iso8601DateTimeConverter() required this.time,
       @LevelConverter() required this.level,
       required this.message,
@@ -195,6 +211,10 @@ class _$ServerLogImpl extends _ServerLog {
 
   factory _$ServerLogImpl.fromJson(Map<String, dynamic> json) =>
       _$$ServerLogImplFromJson(json);
+
+  /// [LogRecord.loggerName]
+  @override
+  final String name;
 
   /// [LogRecord.sequenceNumber]
   @override
@@ -224,7 +244,7 @@ class _$ServerLogImpl extends _ServerLog {
 
   @override
   String toString() {
-    return 'ServerLog(sequenceNumber: $sequenceNumber, time: $time, level: $level, message: $message, error: $error, stackTrace: $stackTrace)';
+    return 'ServerLog(name: $name, sequenceNumber: $sequenceNumber, time: $time, level: $level, message: $message, error: $error, stackTrace: $stackTrace)';
   }
 
   @override
@@ -232,6 +252,7 @@ class _$ServerLogImpl extends _ServerLog {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
             other is _$ServerLogImpl &&
+            (identical(other.name, name) || other.name == name) &&
             (identical(other.sequenceNumber, sequenceNumber) ||
                 other.sequenceNumber == sequenceNumber) &&
             (identical(other.time, time) || other.time == time) &&
@@ -244,8 +265,8 @@ class _$ServerLogImpl extends _ServerLog {
 
   @JsonKey(includeFromJson: false, includeToJson: false)
   @override
-  int get hashCode => Object.hash(
-      runtimeType, sequenceNumber, time, level, message, error, stackTrace);
+  int get hashCode => Object.hash(runtimeType, name, sequenceNumber, time,
+      level, message, error, stackTrace);
 
   /// Create a copy of ServerLog
   /// with the given fields replaced by the non-null parameter values.
@@ -265,7 +286,8 @@ class _$ServerLogImpl extends _ServerLog {
 
 abstract class _ServerLog extends ServerLog {
   const factory _ServerLog(
-      {required final int sequenceNumber,
+      {required final String name,
+      required final int sequenceNumber,
       @Iso8601DateTimeConverter() required final DateTime time,
       @LevelConverter() required final Level level,
       required final String message,
@@ -275,6 +297,10 @@ abstract class _ServerLog extends ServerLog {
 
   factory _ServerLog.fromJson(Map<String, dynamic> json) =
       _$ServerLogImpl.fromJson;
+
+  /// [LogRecord.loggerName]
+  @override
+  String get name;
 
   /// [LogRecord.sequenceNumber]
   @override
