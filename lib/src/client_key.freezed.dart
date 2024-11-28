@@ -20,9 +20,10 @@ ClientKey _$ClientKeyFromJson(Map<String, dynamic> json) {
 
 /// @nodoc
 mixin _$ClientKey {
+  /// Unique identifier for the client key. Used as client id.
+  int get id => throw _privateConstructorUsedError;
+
   /// The key use to authenticate the client.
-  ///
-  /// This is also the unique identifier for the ClientKey.
   String get key => throw _privateConstructorUsedError;
 
   /// The id of the product the key is associated with.
@@ -49,7 +50,8 @@ abstract class $ClientKeyCopyWith<$Res> {
       _$ClientKeyCopyWithImpl<$Res, ClientKey>;
   @useResult
   $Res call(
-      {String key,
+      {int id,
+      String key,
       @JsonKey(name: 'product_id') int productId,
       @JsonKey(name: 'customer_id') int customerId});
 }
@@ -69,11 +71,16 @@ class _$ClientKeyCopyWithImpl<$Res, $Val extends ClientKey>
   @pragma('vm:prefer-inline')
   @override
   $Res call({
+    Object? id = null,
     Object? key = null,
     Object? productId = null,
     Object? customerId = null,
   }) {
     return _then(_value.copyWith(
+      id: null == id
+          ? _value.id
+          : id // ignore: cast_nullable_to_non_nullable
+              as int,
       key: null == key
           ? _value.key
           : key // ignore: cast_nullable_to_non_nullable
@@ -99,7 +106,8 @@ abstract class _$$ClientKeyImplCopyWith<$Res>
   @override
   @useResult
   $Res call(
-      {String key,
+      {int id,
+      String key,
       @JsonKey(name: 'product_id') int productId,
       @JsonKey(name: 'customer_id') int customerId});
 }
@@ -117,11 +125,16 @@ class __$$ClientKeyImplCopyWithImpl<$Res>
   @pragma('vm:prefer-inline')
   @override
   $Res call({
+    Object? id = null,
     Object? key = null,
     Object? productId = null,
     Object? customerId = null,
   }) {
     return _then(_$ClientKeyImpl(
+      id: null == id
+          ? _value.id
+          : id // ignore: cast_nullable_to_non_nullable
+              as int,
       key: null == key
           ? _value.key
           : key // ignore: cast_nullable_to_non_nullable
@@ -142,7 +155,8 @@ class __$$ClientKeyImplCopyWithImpl<$Res>
 @JsonSerializable()
 class _$ClientKeyImpl extends _ClientKey {
   const _$ClientKeyImpl(
-      {required this.key,
+      {required this.id,
+      required this.key,
       @JsonKey(name: 'product_id') required this.productId,
       @JsonKey(name: 'customer_id') required this.customerId})
       : super._();
@@ -150,9 +164,11 @@ class _$ClientKeyImpl extends _ClientKey {
   factory _$ClientKeyImpl.fromJson(Map<String, dynamic> json) =>
       _$$ClientKeyImplFromJson(json);
 
+  /// Unique identifier for the client key. Used as client id.
+  @override
+  final int id;
+
   /// The key use to authenticate the client.
-  ///
-  /// This is also the unique identifier for the ClientKey.
   @override
   final String key;
 
@@ -168,7 +184,7 @@ class _$ClientKeyImpl extends _ClientKey {
 
   @override
   String toString() {
-    return 'ClientKey(key: $key, productId: $productId, customerId: $customerId)';
+    return 'ClientKey(id: $id, key: $key, productId: $productId, customerId: $customerId)';
   }
 
   @override
@@ -176,6 +192,7 @@ class _$ClientKeyImpl extends _ClientKey {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
             other is _$ClientKeyImpl &&
+            (identical(other.id, id) || other.id == id) &&
             (identical(other.key, key) || other.key == key) &&
             (identical(other.productId, productId) ||
                 other.productId == productId) &&
@@ -185,7 +202,7 @@ class _$ClientKeyImpl extends _ClientKey {
 
   @JsonKey(includeFromJson: false, includeToJson: false)
   @override
-  int get hashCode => Object.hash(runtimeType, key, productId, customerId);
+  int get hashCode => Object.hash(runtimeType, id, key, productId, customerId);
 
   /// Create a copy of ClientKey
   /// with the given fields replaced by the non-null parameter values.
@@ -205,7 +222,8 @@ class _$ClientKeyImpl extends _ClientKey {
 
 abstract class _ClientKey extends ClientKey {
   const factory _ClientKey(
-          {required final String key,
+          {required final int id,
+          required final String key,
           @JsonKey(name: 'product_id') required final int productId,
           @JsonKey(name: 'customer_id') required final int customerId}) =
       _$ClientKeyImpl;
@@ -214,9 +232,11 @@ abstract class _ClientKey extends ClientKey {
   factory _ClientKey.fromJson(Map<String, dynamic> json) =
       _$ClientKeyImpl.fromJson;
 
+  /// Unique identifier for the client key. Used as client id.
+  @override
+  int get id;
+
   /// The key use to authenticate the client.
-  ///
-  /// This is also the unique identifier for the ClientKey.
   @override
   String get key;
 

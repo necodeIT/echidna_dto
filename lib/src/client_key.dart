@@ -10,9 +10,10 @@ part 'client_key.g.dart';
 class ClientKey with _$ClientKey {
   ///A model for the ClientKey table.
   const factory ClientKey({
+    /// Unique identifier for the client key. Used as client id.
+    required int id,
+
     /// The key use to authenticate the client.
-    ///
-    /// This is also the unique identifier for the ClientKey.
     required String key,
 
     /// The id of the product the key is associated with.
