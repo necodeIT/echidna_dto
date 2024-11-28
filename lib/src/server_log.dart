@@ -12,6 +12,9 @@ part 'server_log.g.dart';
 class ServerLog with _$ServerLog {
   /// A message logged by the server.
   const factory ServerLog({
+    /// [LogRecord.loggerName]
+    required String name,
+
     /// [LogRecord.sequenceNumber]
     required int sequenceNumber,
 
@@ -39,6 +42,7 @@ class ServerLog with _$ServerLog {
   /// Creates a [ServerLog] from a [LogRecord].
   factory ServerLog.fromLogRecord(LogRecord record) {
     return ServerLog(
+      name: record.loggerName,
       sequenceNumber: record.sequenceNumber,
       time: record.time,
       level: record.level,
