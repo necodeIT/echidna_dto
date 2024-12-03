@@ -39,10 +39,10 @@ mixin _$IdentityProvider {
             String name,
             String clientId,
             String clientSecret,
-            String redirectUri,
+            String introspectUri,
             String authorizationUrl,
             String tokenUrl,
-            String userInfoUrl,
+            String logoutUrl,
             String scopes)
         oidc,
   }) =>
@@ -55,10 +55,10 @@ mixin _$IdentityProvider {
             String name,
             String clientId,
             String clientSecret,
-            String redirectUri,
+            String introspectUri,
             String authorizationUrl,
             String tokenUrl,
-            String userInfoUrl,
+            String logoutUrl,
             String scopes)?
         oidc,
   }) =>
@@ -71,10 +71,10 @@ mixin _$IdentityProvider {
             String name,
             String clientId,
             String clientSecret,
-            String redirectUri,
+            String introspectUri,
             String authorizationUrl,
             String tokenUrl,
-            String userInfoUrl,
+            String logoutUrl,
             String scopes)?
         oidc,
     required TResult orElse(),
@@ -256,10 +256,10 @@ class _$SamlIdentityProviderImpl extends SamlIdentityProvider {
             String name,
             String clientId,
             String clientSecret,
-            String redirectUri,
+            String introspectUri,
             String authorizationUrl,
             String tokenUrl,
-            String userInfoUrl,
+            String logoutUrl,
             String scopes)
         oidc,
   }) {
@@ -275,10 +275,10 @@ class _$SamlIdentityProviderImpl extends SamlIdentityProvider {
             String name,
             String clientId,
             String clientSecret,
-            String redirectUri,
+            String introspectUri,
             String authorizationUrl,
             String tokenUrl,
-            String userInfoUrl,
+            String logoutUrl,
             String scopes)?
         oidc,
   }) {
@@ -294,10 +294,10 @@ class _$SamlIdentityProviderImpl extends SamlIdentityProvider {
             String name,
             String clientId,
             String clientSecret,
-            String redirectUri,
+            String introspectUri,
             String authorizationUrl,
             String tokenUrl,
-            String userInfoUrl,
+            String logoutUrl,
             String scopes)?
         oidc,
     required TResult orElse(),
@@ -382,10 +382,10 @@ abstract class _$$OidcIdentityProviderImplCopyWith<$Res>
       {String name,
       String clientId,
       String clientSecret,
-      String redirectUri,
+      String introspectUri,
       String authorizationUrl,
       String tokenUrl,
-      String userInfoUrl,
+      String logoutUrl,
       String scopes});
 }
 
@@ -405,10 +405,10 @@ class __$$OidcIdentityProviderImplCopyWithImpl<$Res>
     Object? name = null,
     Object? clientId = null,
     Object? clientSecret = null,
-    Object? redirectUri = null,
+    Object? introspectUri = null,
     Object? authorizationUrl = null,
     Object? tokenUrl = null,
-    Object? userInfoUrl = null,
+    Object? logoutUrl = null,
     Object? scopes = null,
   }) {
     return _then(_$OidcIdentityProviderImpl(
@@ -424,9 +424,9 @@ class __$$OidcIdentityProviderImplCopyWithImpl<$Res>
           ? _value.clientSecret
           : clientSecret // ignore: cast_nullable_to_non_nullable
               as String,
-      redirectUri: null == redirectUri
-          ? _value.redirectUri
-          : redirectUri // ignore: cast_nullable_to_non_nullable
+      introspectUri: null == introspectUri
+          ? _value.introspectUri
+          : introspectUri // ignore: cast_nullable_to_non_nullable
               as String,
       authorizationUrl: null == authorizationUrl
           ? _value.authorizationUrl
@@ -436,9 +436,9 @@ class __$$OidcIdentityProviderImplCopyWithImpl<$Res>
           ? _value.tokenUrl
           : tokenUrl // ignore: cast_nullable_to_non_nullable
               as String,
-      userInfoUrl: null == userInfoUrl
-          ? _value.userInfoUrl
-          : userInfoUrl // ignore: cast_nullable_to_non_nullable
+      logoutUrl: null == logoutUrl
+          ? _value.logoutUrl
+          : logoutUrl // ignore: cast_nullable_to_non_nullable
               as String,
       scopes: null == scopes
           ? _value.scopes
@@ -455,10 +455,10 @@ class _$OidcIdentityProviderImpl extends OidcIdentityProvider {
       {required this.name,
       required this.clientId,
       required this.clientSecret,
-      required this.redirectUri,
+      required this.introspectUri,
       required this.authorizationUrl,
       required this.tokenUrl,
-      required this.userInfoUrl,
+      required this.logoutUrl,
       required this.scopes,
       final String? $type})
       : $type = $type ?? 'oidc',
@@ -474,13 +474,13 @@ class _$OidcIdentityProviderImpl extends OidcIdentityProvider {
   @override
   final String clientSecret;
   @override
-  final String redirectUri;
+  final String introspectUri;
   @override
   final String authorizationUrl;
   @override
   final String tokenUrl;
   @override
-  final String userInfoUrl;
+  final String logoutUrl;
   @override
   final String scopes;
 
@@ -489,7 +489,7 @@ class _$OidcIdentityProviderImpl extends OidcIdentityProvider {
 
   @override
   String toString() {
-    return 'IdentityProvider.oidc(name: $name, clientId: $clientId, clientSecret: $clientSecret, redirectUri: $redirectUri, authorizationUrl: $authorizationUrl, tokenUrl: $tokenUrl, userInfoUrl: $userInfoUrl, scopes: $scopes)';
+    return 'IdentityProvider.oidc(name: $name, clientId: $clientId, clientSecret: $clientSecret, introspectUri: $introspectUri, authorizationUrl: $authorizationUrl, tokenUrl: $tokenUrl, logoutUrl: $logoutUrl, scopes: $scopes)';
   }
 
   @override
@@ -502,21 +502,21 @@ class _$OidcIdentityProviderImpl extends OidcIdentityProvider {
                 other.clientId == clientId) &&
             (identical(other.clientSecret, clientSecret) ||
                 other.clientSecret == clientSecret) &&
-            (identical(other.redirectUri, redirectUri) ||
-                other.redirectUri == redirectUri) &&
+            (identical(other.introspectUri, introspectUri) ||
+                other.introspectUri == introspectUri) &&
             (identical(other.authorizationUrl, authorizationUrl) ||
                 other.authorizationUrl == authorizationUrl) &&
             (identical(other.tokenUrl, tokenUrl) ||
                 other.tokenUrl == tokenUrl) &&
-            (identical(other.userInfoUrl, userInfoUrl) ||
-                other.userInfoUrl == userInfoUrl) &&
+            (identical(other.logoutUrl, logoutUrl) ||
+                other.logoutUrl == logoutUrl) &&
             (identical(other.scopes, scopes) || other.scopes == scopes));
   }
 
   @JsonKey(includeFromJson: false, includeToJson: false)
   @override
   int get hashCode => Object.hash(runtimeType, name, clientId, clientSecret,
-      redirectUri, authorizationUrl, tokenUrl, userInfoUrl, scopes);
+      introspectUri, authorizationUrl, tokenUrl, logoutUrl, scopes);
 
   /// Create a copy of IdentityProvider
   /// with the given fields replaced by the non-null parameter values.
@@ -538,15 +538,15 @@ class _$OidcIdentityProviderImpl extends OidcIdentityProvider {
             String name,
             String clientId,
             String clientSecret,
-            String redirectUri,
+            String introspectUri,
             String authorizationUrl,
             String tokenUrl,
-            String userInfoUrl,
+            String logoutUrl,
             String scopes)
         oidc,
   }) {
-    return oidc(name, clientId, clientSecret, redirectUri, authorizationUrl,
-        tokenUrl, userInfoUrl, scopes);
+    return oidc(name, clientId, clientSecret, introspectUri, authorizationUrl,
+        tokenUrl, logoutUrl, scopes);
   }
 
   @override
@@ -558,15 +558,15 @@ class _$OidcIdentityProviderImpl extends OidcIdentityProvider {
             String name,
             String clientId,
             String clientSecret,
-            String redirectUri,
+            String introspectUri,
             String authorizationUrl,
             String tokenUrl,
-            String userInfoUrl,
+            String logoutUrl,
             String scopes)?
         oidc,
   }) {
-    return oidc?.call(name, clientId, clientSecret, redirectUri,
-        authorizationUrl, tokenUrl, userInfoUrl, scopes);
+    return oidc?.call(name, clientId, clientSecret, introspectUri,
+        authorizationUrl, tokenUrl, logoutUrl, scopes);
   }
 
   @override
@@ -578,17 +578,17 @@ class _$OidcIdentityProviderImpl extends OidcIdentityProvider {
             String name,
             String clientId,
             String clientSecret,
-            String redirectUri,
+            String introspectUri,
             String authorizationUrl,
             String tokenUrl,
-            String userInfoUrl,
+            String logoutUrl,
             String scopes)?
         oidc,
     required TResult orElse(),
   }) {
     if (oidc != null) {
-      return oidc(name, clientId, clientSecret, redirectUri, authorizationUrl,
-          tokenUrl, userInfoUrl, scopes);
+      return oidc(name, clientId, clientSecret, introspectUri, authorizationUrl,
+          tokenUrl, logoutUrl, scopes);
     }
     return orElse();
   }
@@ -637,10 +637,10 @@ abstract class OidcIdentityProvider extends IdentityProvider {
       {required final String name,
       required final String clientId,
       required final String clientSecret,
-      required final String redirectUri,
+      required final String introspectUri,
       required final String authorizationUrl,
       required final String tokenUrl,
-      required final String userInfoUrl,
+      required final String logoutUrl,
       required final String scopes}) = _$OidcIdentityProviderImpl;
   const OidcIdentityProvider._() : super._();
 
@@ -651,10 +651,10 @@ abstract class OidcIdentityProvider extends IdentityProvider {
   String get name;
   String get clientId;
   String get clientSecret;
-  String get redirectUri;
+  String get introspectUri;
   String get authorizationUrl;
   String get tokenUrl;
-  String get userInfoUrl;
+  String get logoutUrl;
   String get scopes;
 
   /// Create a copy of IdentityProvider
